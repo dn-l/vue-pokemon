@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FilterBar.vue matches snapshot 1`] = `
+<v-row-stub tag="div" align="center" justify="space-around" class="pa-2">
+  <v-col-stub tag="div">
+    <v-switch-stub errorcount="1" errormessages="" messages="" rules="" successmessages="" backgroundcolor="" label="Only Favourites" ripple="true" valuecomparator="function deepEqual(a, b) {
+  if (a === b) return true;
+
+  if (a instanceof Date &amp;&amp; b instanceof Date) {
+    // If the values are Date, they were convert to timestamp with getTime and compare it
+    if (a.getTime() !== b.getTime()) return false;
+  }
+
+  if (a !== Object(a) || b !== Object(b)) {
+    // If the values aren't objects, they were already checked for equality
+    return false;
+  }
+
+  var props = Object.keys(a);
+
+  if (props.length !== Object.keys(b).length) {
+    // Different number of props, don't bother to check
+    return false;
+  }
+
+  return props.every(function (p) {
+    return deepEqual(a[p], b[p]);
+  });
+}"></v-switch-stub>
+  </v-col-stub>
+  <v-col-stub tag="div">
+    <v-switch-stub errorcount="1" errormessages="" messages="" rules="" successmessages="" backgroundcolor="" label="Show Evolutions" ripple="true" valuecomparator="function deepEqual(a, b) {
+  if (a === b) return true;
+
+  if (a instanceof Date &amp;&amp; b instanceof Date) {
+    // If the values are Date, they were convert to timestamp with getTime and compare it
+    if (a.getTime() !== b.getTime()) return false;
+  }
+
+  if (a !== Object(a) || b !== Object(b)) {
+    // If the values aren't objects, they were already checked for equality
+    return false;
+  }
+
+  var props = Object.keys(a);
+
+  if (props.length !== Object.keys(b).length) {
+    // Different number of props, don't bother to check
+    return false;
+  }
+
+  return props.every(function (p) {
+    return deepEqual(a[p], b[p]);
+  });
+}"></v-switch-stub>
+  </v-col-stub>
+  <v-col-stub tag="div">
+    <v-select-stub errorcount="1" errormessages="" messages="" rules="" successmessages="" appendicon="$vuetify.icons.dropdown" backgroundcolor="" label="Sort by" loaderheight="2" clearicon="$vuetify.icons.clear" type="text" valuecomparator="function deepEqual(a, b) {
+  if (a === b) return true;
+
+  if (a instanceof Date &amp;&amp; b instanceof Date) {
+    // If the values are Date, they were convert to timestamp with getTime and compare it
+    if (a.getTime() !== b.getTime()) return false;
+  }
+
+  if (a !== Object(a) || b !== Object(b)) {
+    // If the values aren't objects, they were already checked for equality
+    return false;
+  }
+
+  var props = Object.keys(a);
+
+  if (props.length !== Object.keys(b).length) {
+    // Different number of props, don't bother to check
+    return false;
+  }
+
+  return props.every(function (p) {
+    return deepEqual(a[p], b[p]);
+  });
+}" nodatatext="$vuetify.noDataText" items="Name,Number,Damage" itemcolor="primary" itemdisabled="disabled" itemtext="text" itemvalue="value" menuprops="[object Object]"></v-select-stub>
+  </v-col-stub>
+</v-row-stub>
+`;

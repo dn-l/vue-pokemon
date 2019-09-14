@@ -1,0 +1,12 @@
+services:
+  - docker
+
+before_install:
+  - docker build -t denlb/vue-pokemon .
+
+jobs:
+  include:
+    - stage: lint
+      script: docker run -e CI=true denlb/vue-pokemon npm run lint
+    - stage: test:unit
+      script: docker run -e CI=true denlb/vue-pokemon npm run test:unit

@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PokemonCard.vue matches snapshot 1`] = `
+<v-card-stub loaderheight="4" tag="div" width="15em" raised="true" class="ma-4">
+  <v-img-stub height="15em" position="top" src="https://img.pokemondb.net/artwork/bulbasaur.jpg" transition="fade-transition"></v-img-stub>
+  <v-card-title-stub>Bulbasaur</v-card-title-stub>
+  <v-card-actions-stub>
+    <v-btn-stub tag="button" activeclass="" icon="true" type="button">
+      <v-icon-stub>mdi-heart-outline</v-icon-stub>
+    </v-btn-stub>
+    <div class="flex-grow-1"></div>
+    <v-btn-stub tag="button" activeclass="" to="[object Object]" outlined="true" type="button">
+      Learn more
+    </v-btn-stub>
+  </v-card-actions-stub>
+</v-card-stub>
+`;
