@@ -1,6 +1,6 @@
 {
   "name": "vue-pokemon",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "repository": "github:denlb/vue-pokemon",
   "description": "Vue.js list-detail SPA using GraphQL endpoint",
   "license": "MIT",
