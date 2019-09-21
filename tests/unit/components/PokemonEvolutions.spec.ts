@@ -26,13 +26,7 @@ localVue.use(VueRouter);
 
 const router = new VueRouter({ routes });
 
-const store = new Vuex.Store({
-  getters: {
-    isFavourite() {
-      return () => false;
-    },
-  },
-});
+const store = new Vuex.Store({ });
 
 describe('PokemonEvolutions.vue', () => {
   const wrapper = mount(PokemonEvolutions, {

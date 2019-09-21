@@ -23,12 +23,11 @@
 <script lang="ts">
 import Vue from 'vue';
 import { SortBy } from '../State';
+import { mapState } from 'vuex'
 
 export default Vue.extend({
   computed: {
-    filterParams() {
-      return this.$store.state.filterParams;
-    },
+    ...mapState(['filterParams']),
     sortByOptions() {
       return Object.keys(SortBy);
     },
