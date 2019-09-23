@@ -6,6 +6,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import memoize from 'fast-memoize';
 import PokemonCard from '../PokemonCard.vue';
 import Pokemon from './Pokemon';
 import filterShowOnlyFavourites from './filterShowOnlyFavourites';
@@ -14,6 +15,8 @@ import sortByName from './sortByName';
 import sortByNumber from './sortByNumber';
 import sortByDamage from './sortByDamage';
 import State, { SortBy } from '../../State';
+
+const memoizedFilterWithoutEvolutions = memoize(filterWithoutEvolutions);
 
 export default Vue.extend({
   props: ['pokemons'],
@@ -35,7 +38,7 @@ export default Vue.extend({
       } = this.$store.state as State;
 
       if (!showEvolutions) {
-        pokemons = filterWithoutEvolutions(pokemons);
+        pokemons = memoizedFilterWithoutEvolutions(pokemons);
       }
 
       if (showOnlyFavourite) {
