@@ -1,10 +1,11 @@
 const express = require('express');
 const path = require('path');
+const history = require('express-history-api-fallback');
 
 const app = express();
 
-app.use(express.static(path.join(__dirname, 'dist')));
-app.get('*', (request, response) => response.sendFile(
-  path.resolve(__dirname, 'dist', 'index.html'),
-));
+const root = path.join(__dirname, 'dist');
+app.use(express.static(root));
+app.use(history('index.html', { root }));
+
 app.listen(process.env.PORT || 8080);
