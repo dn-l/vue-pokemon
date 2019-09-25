@@ -1,7 +1,9 @@
 <template>
-  <v-row justify="space-around" align="center">
-    <PokemonCard :pokemon="pokemon" :key="pokemon.id" v-for="pokemon in filteredPokemons" />
-  </v-row>
+  <v-container>
+    <v-row justify="space-around" align="center">
+      <PokemonCard :pokemon="pokemon" :key="pokemon.id" v-for="pokemon in filteredPokemons" />
+    </v-row>
+  </v-container>
 </template>
 
 <script lang="ts">

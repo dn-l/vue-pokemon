@@ -1,33 +1,40 @@
 <template>
-  <v-row justify="space-around" align="center" class="pa-2">
-    <v-col>
-      <v-switch
-        :input-value="filterParams.showOnlyFavourite"
-        @change="setFilter('showOnlyFavourite', $event)"
-        label="Only Favourites"
-      />
-    </v-col>
-    <v-col>
-      <v-switch
-        :input-value="filterParams.showEvolutions"
-        @change="setFilter('showEvolutions', $event)"
-        label="Show Evolutions"
-      />
-    </v-col>
-    <v-col>
-      <v-select v-model="sortBy" :items="sortByOptions" label="Sort by" />
-    </v-col>
-  </v-row>
+  <v-toolbar flat>
+    <v-switch
+      class="mr-2"
+      hide-details
+      :input-value="filterParams.showOnlyFavourite"
+      @change="toggleFilter('showOnlyFavourite')"
+      label="Only Favourites"
+    />
+    <v-switch
+      class="mx-2"
+      hide-details
+      :input-value="filterParams.showEvolutions"
+      @change="toggleFilter('showEvolutions')"
+      label="Show Evolutions"
+    />
+    <v-select
+      class="sort-by"
+      hide-details
+      v-model="sortBy"
+      :items="sortByOptions"
+      prefix="Sort by"
+      ref="select"
+      full-width
+    />
+  </v-toolbar>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-import { SortBy } from '../State';
-import { mapState } from 'vuex'
+import { SortBy, FilterParams } from '../State';
 
 export default Vue.extend({
   computed: {
-    ...mapState(['filterParams']),
+    filterParams() {
+      return this.$store.state.filterParams
+    },
     sortByOptions() {
       return Object.keys(SortBy);
     },
@@ -42,9 +49,15 @@ export default Vue.extend({
   },
 
   methods: {
-    setFilter(name: string, value: boolean) {
-      this.$store.dispatch('setFilter', { [name]: value });
+    toggleFilter(name: string, value: boolean) {
+      this.$store.dispatch('setFilter', { [name]: !this.filterParams[name] });
     },
   },
 });
 </script>
+
+<style>
+  sort-by {
+    max-width: 100px;
+  }
+</style>
