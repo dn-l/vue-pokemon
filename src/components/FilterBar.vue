@@ -33,7 +33,7 @@ import { SortBy, FilterParams } from '../State';
 export default Vue.extend({
   computed: {
     filterParams() {
-      return this.$store.state.filterParams
+      return this.$store.state.filterParams;
     },
     sortByOptions() {
       return Object.keys(SortBy);

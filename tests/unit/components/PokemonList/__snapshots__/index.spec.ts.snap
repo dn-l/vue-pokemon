@@ -1,8 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PokemonList.vue matches snapshot 1`] = `
-<v-row-stub tag="div" align="center" justify="space-around">
-  <pokemoncard-stub pokemon="[object Object]"></pokemoncard-stub>
-  <pokemoncard-stub pokemon="[object Object]"></pokemoncard-stub>
-</v-row-stub>
+<v-container-stub tag="div">
+  <v-row-stub tag="div" align="center" justify="space-around">
+    <pokemoncard-stub pokemon="[object Object]"></pokemoncard-stub>
+    <pokemoncard-stub pokemon="[object Object]"></pokemoncard-stub>
+  </v-row-stub>
+</v-container-stub>
 `;
